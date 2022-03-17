@@ -1,6 +1,6 @@
 <?php
 
-namespace Joy\VoyagerBreadReplaceKeyword\Database\Seeders;
+namespace Joy\VoyagerBreadEmail\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
@@ -12,16 +12,16 @@ class DataTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        $dataType = $this->dataType('slug', 'replace-keywords');
+        $dataType = $this->dataType('slug', 'emails');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'replace_keywords',
-                'display_name_singular' => __('joy-voyager-bread-replace-keyword::seeders.data_types.replace_keyword.singular'),
-                'display_name_plural'   => __('joy-voyager-bread-replace-keyword::seeders.data_types.replace_keyword.plural'),
+                'name'                  => 'emails',
+                'display_name_singular' => __('joy-voyager-bread-email::seeders.data_types.email.singular'),
+                'display_name_plural'   => __('joy-voyager-bread-email::seeders.data_types.email.plural'),
                 'icon'                  => 'voyager-bread',
-                'model_name'            => 'Joy\\VoyagerBreadReplaceKeyword\\Models\\ReplaceKeyword',
-                // 'policy_name'           => 'Joy\\VoyagerBreadReplaceKeyword\\Policies\\ReplaceKeywordPolicy',
-                // 'controller'            => 'Joy\\VoyagerBreadReplaceKeyword\\Http\\Controllers\\VoyagerBreadReplaceKeywordController',
+                'model_name'            => 'Joy\\VoyagerBreadEmail\\Models\\Email',
+                // 'policy_name'           => 'Joy\\VoyagerBreadEmail\\Policies\\EmailPolicy',
+                // 'controller'            => 'Joy\\VoyagerBreadEmail\\Http\\Controllers\\VoyagerBreadEmailController',
                 'generate_permissions'  => 1,
                 'description'           => '',
             ])->save();
